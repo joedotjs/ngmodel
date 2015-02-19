@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ngmodel</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="Lecture" ng-controller="MainCtrl">
+    <pre>{{ song | json }}</pre>
+    <form name="songForm" ng-submit="songForm.$valid && submitSong(song)">
+        <span ng-show="songForm.title.$invalid">Title is required.</span><br />
+        Title: <input name="title" required type="text" ng-model="song.title" />
+        Artist: <input name="artist" required ng-minlength="8" type="text" ng-model="song.artist" />
+        Album:
+        <select name="albumName" required ng-model="song.album">
+            <option>OK Computer</option>
+            <option>Kid A</option>
+        </select>
+        <button type="submit">Submit Song</button>
+    </form>
+</body>
+</html>
