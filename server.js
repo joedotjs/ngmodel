@@ -10,7 +10,7 @@ var SongModel = require('./song-model');
 mongoose.connect('mongodb://localhost/music-app');
 
 mongoose.connection.once('open', function () {
-    server.listen(1337, function () {
+    server.listen(1338, function () {
         console.log('Server started on port 1337');
     });
 });
